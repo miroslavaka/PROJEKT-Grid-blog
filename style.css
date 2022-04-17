@@ -75,14 +75,16 @@ blockquote {
 body {
   padding-left: 0;
   padding-right: 0;
+  font-family: 'Alice', serif;
+  margin: 0;
 }
 
 .blog {
-  width: 100vw;
-  /*width: 100%;*/
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
   column-gap: 40px;
+  padding: 20px;
 }
 header,
 h1,
@@ -91,18 +93,43 @@ p,
 footer {
   grid-column: 2/3;
 }
-h1,
-h2 {
-  color: var(--zelena);
-}
-blockquote {
-  color: var(--seda);
-}
-
 figure,
 figcaption,
 blockquote {
   grid-column: 1/4;
+}
+header p {
+  color: var(--seda);
+}
+h1,
+h2 {
+  color: var(--zelena);
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+}
+h1 {
+  font-size: 60px;
+}
+blockquote {
+  color: var(--seda);
+  font-family: 'Kaushan Script', cursive;
+  font-size: xx-large;
+  text-align: center;
+  margin: 0;
+}
+blockquote::before {
+  content: '';
+  display: block;
+  width: 80px;
+  border-top: 2px solid var(--limetka);
+  margin: 10px auto;
+}
+blockquote::after {
+  content: '';
+  display: block;
+  width: 80px;
+  border-bottom: 2px solid var(--limetka);
+  margin: 10px auto;
 }
 figure {
   margin: 0;
@@ -110,19 +137,35 @@ figure {
 figure img {
   width: 100%;
 }
-
+figcaption,
+footer,
+footer a {
+  color: var(--seda);
+}
 .tip-vlevo {
   grid-column: 1/2;
+}
+.tip-vpravo {
+  grid-column: 3/4;
+}
+.tip-vlevo,
+.tip-vpravo {
+  padding: 10px;
+  color: var(--tmava);
   background-color: var(--svetla);
   text-align: center;
   border-right: 5px solid var(--zluta);
 }
-.tip-vlevo img {
-  width: 100%;
+.blog .tip-vlevo:not(:last-child) {
+  margin-bottom: 70px;
 }
 .tip-vpravo {
-  grid-column: 3/4;
-  background-color: var(--svetla);
-  text-align: center;
-  border-left: 5px solid var(--zluta);
+  margin-bottom: 70px;
+}
+.tip-vlevo a,
+.tip-vpravo a {
+  color: var(--oranzova);
+}
+.tip-vlevo img {
+  width: 100%;
 }
